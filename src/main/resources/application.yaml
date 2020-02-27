@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: vote-generator
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}.${random.value}
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+server:
+  port: 0
